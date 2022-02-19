@@ -5,4 +5,18 @@ const createCatController = async (req, res) => {
   res.status(201).json(cat);
 };
 
-module.exports = createCatController;
+const getCatsController = async (req, res) => {
+  const cats = await Cat.findAll();
+  res.json(cats);
+};
+
+const getCatController = async (req, res) => {
+  const cat = await Cat.findByPk(req.params.catId);
+  res.json(cat);
+};
+
+module.exports = {
+  createCatController,
+  getCatsController,
+  getCatController
+};
