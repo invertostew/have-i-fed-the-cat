@@ -1,6 +1,6 @@
 const express = require('express');
 
-const catsRouter = require('./routes/cats')
+const catsRouter = require('./routes/cats');
 
 const app = express();
 
